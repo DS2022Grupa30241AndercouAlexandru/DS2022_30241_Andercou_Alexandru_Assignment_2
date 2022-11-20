@@ -3,8 +3,12 @@
   <groupId>MessageConsumer</groupId>
   <artifactId>MessageConsumer</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  
+    <name>ds-2022-2</name>
+    <packaging>jar</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
   <dependencies>
     <dependency>
   

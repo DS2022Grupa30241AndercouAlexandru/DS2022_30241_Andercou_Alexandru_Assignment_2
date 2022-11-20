@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  demo-be:
+    build: .
+    image: consumer_client
+    restart: always
+    environment:
+    ports:
+        - "8083:8083"
+   
+
+
+   
+
