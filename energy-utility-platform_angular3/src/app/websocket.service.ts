@@ -15,7 +15,7 @@ export enum SocketClientState {
 export class WebsocketService {
 
 
-  public  notifications:any;
+  private notifications:any=[];
 
   private client: Stomp.Client;
   
@@ -38,6 +38,10 @@ export class WebsocketService {
   })
   ;}
 
+  getNotification()
+{
+  return this.notifications;
+}
 
   
 

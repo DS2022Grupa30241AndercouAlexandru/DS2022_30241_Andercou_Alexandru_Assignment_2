@@ -2,21 +2,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
+import { HighchartsChartModule} from 'highcharts-angular'
+
+
+
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SigninPageComponent } from './signin-page/signin-page.component';
-import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgChartsModule } from 'ng2-charts';
-import { DataTablesModule } from 'angular-datatables';
-import { NgChartjsModule } from 'ng-chartjs';
 import { ResetEmailComponent } from './reset-email/reset-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { HighchartsChartModule} from 'highcharts-angular'
+import { WebsocketService } from './websocket.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +38,10 @@ import { HighchartsChartModule} from 'highcharts-angular'
     FormsModule,
     HighchartsChartModule,
     ReactiveFormsModule,
-    NgChartsModule,
-    DataTablesModule,
-    NgChartjsModule.registerPlugin([])
+     DataTablesModule,
+     
   ],
-  providers: [],
+  providers: [WebsocketService],
   bootstrap:[AppComponent]
 })
 export class AppModule { }

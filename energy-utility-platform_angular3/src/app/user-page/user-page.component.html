@@ -7,7 +7,7 @@
 
 <body id="body">
     <H1 id="title">Welcome to your user Page</H1>
-
+    
 
     <div id="table_section">
         <p>Your associated Devices</p>
@@ -18,10 +18,10 @@
             <thead>
                 <tr>
                     <th>Device id</th>
-                    <th>Nume device</th>
-                    <th>Description Device</th>
-                    <th>Max hourly Consumption</th>
-                    <th>Adress of device</th>
+                    <th>Nume</th>
+                    <th>description</th>
+                    <th>Max hourly Consume</th>
+                    <th>Adress</th>
 
                 </tr>
             </thead>
@@ -49,7 +49,7 @@
 
     <p>Choose device by id</p>
     <input id="dsearch" type="text">
-    <button   (click)="searchDevice()">Send</button>
+    <button   (click)="do_search()">Send</button>
    
      <br>
      <br>
@@ -73,11 +73,10 @@
     </table>
      
 
+    <p>Notification:</p>
+    <div id="notifis_div">
 
-
-
-
-
+    </div>
 
 
 
@@ -88,7 +87,7 @@
         <p id="devicename"></p>
         <form>
         <label for="date">Choose Day:</label>
-        <input type="date" id="date" (input)="setDate()">
+        <input type="date" id="date" (input)= "setDate()">
         </form>
 
 
@@ -99,3 +98,4 @@
 
 
 </body>
+

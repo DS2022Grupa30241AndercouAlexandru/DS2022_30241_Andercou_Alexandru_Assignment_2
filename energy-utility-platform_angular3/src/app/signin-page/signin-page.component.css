@@ -19,7 +19,7 @@ label {
 body{
     margin-left:40%;
     margin-top: 50px;
-    
+    min-height:82vh;
 }
 button{
     background-color: rgb(61, 51, 190);

@@ -16,6 +16,7 @@
 }
 body{
  margin:auto;
+ min-height:100vh;
 }
 button{
     background-color: rgb(61, 51, 190);

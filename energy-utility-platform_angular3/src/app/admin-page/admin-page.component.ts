@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { ElementSchemaRegistry, IfStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/internal/Subject';
@@ -7,8 +6,6 @@ import { Device } from '../device';
 import { LocatorService } from '../locator.service';
 import { MappingDeviceUser } from '../mapping-device-user';
 import { MappingRow } from '../mapping-row';
-import { Measurement } from '../measurement';
-import { Role } from '../role';
 import { User } from '../user';
 
 @Component({

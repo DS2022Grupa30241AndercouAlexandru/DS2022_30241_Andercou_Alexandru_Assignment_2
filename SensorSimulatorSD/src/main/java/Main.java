@@ -1,15 +1,22 @@
 import DataReading.RabbitMQSender;
+import lombok.Value;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.ResourceBundle;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
+        FileReader reader=new FileReader("src/main/resources/aplication.propeties");
+        Properties p=new Properties();
+        p.load(reader);
         DataProcessor dp;
+        dp=  new  DataProcessor(Long.valueOf(p.getProperty("DEVICE_ID")));
 
-        if(args.length>0)
-        dp=new  DataProcessor(Long.valueOf(args[0]));
-        else
-        dp=  new  DataProcessor(Long.valueOf(17));
-        dp.buildMesage();
+
     }
 }

@@ -2,14 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Router } from '@angular/router'
-import { Chart } from 'chart.js';
-import { ChartType } from 'chart.js';
 import { Device } from '../device';
 import { Measurement } from '../measurement';
 import { Subject } from 'rxjs/internal/Subject';
 import { LocatorService } from '../locator.service';
-import * as Highcharts from 'highcharts';
+import * as Highcharts from 'highcharts'; 
 import { WebsocketService } from '../websocket.service';
+
 
 
 
@@ -30,6 +29,7 @@ export class UserPageComponent implements OnInit {
   device_searched=false;
   url1=this.host+"/user/"
   url13 =this.host+ "/device"
+  
   constructor(private httpc:HttpClient,private router:Router,private lt: LocatorService,private ws:WebsocketService) { 
     
     this.dtOptions = {
@@ -42,6 +42,8 @@ export class UserPageComponent implements OnInit {
    this.host=lt.getHost();
    this.url1=this.host+"/user/"
    this.url13 =this.host+ "/device"
+   console.log("SERVERRRRR",ws);
+
   }
 
         remove_duplicates_devices(){
@@ -105,6 +107,7 @@ export class UserPageComponent implements OnInit {
    make_Chart(devices:any,date:any)
    {
 
+    $("#charts_section").height("600px")
 
 
     console.log("deve:",devices," ",devices.length);
@@ -148,7 +151,7 @@ export class UserPageComponent implements OnInit {
 
           for(let measure of measurements)
           {
-             console.log(measure["date"],this.day);
+             console.log(measure["date"]," VS ",this.day);
 
             if(measure["date"]==this.day)
             {
@@ -200,10 +203,40 @@ export class UserPageComponent implements OnInit {
     }
     
 
+    do_notifications()
+    {
+      console.log("webserve"+this.ws)
+     var notification=this.ws.getNotification()
+     var idUser=sessionStorage.getItem("idUser");
+   
+
+      $("#notifis_div").empty();
+
+
+      if(notification)
+      if(notification.length>0)
+     for(var notif of notification)
+    {    
+   
+
+         if(notif["user_id"]==idUser)
+         {
+          $("#notifis_div").append("<p>"+notif["message"]+"</p>")
+       
+         }
+ 
+    }
+    $("html").css("background-color","grainsboro")
+
     
+    }
     
 
+   do_search()
+   {
+    this.searchDevice();
    
+   }
 
 
   change_title()
@@ -233,10 +266,10 @@ export class UserPageComponent implements OnInit {
    var ua= sessionStorage.getItem("type");
    if(ua=="USER")
    {
-
+       console.log("se poate oare?",this.ws);
+      
     console.log("este permis accesul");
    
-      
              
       var idUser=sessionStorage.getItem("idUser");
       
@@ -250,8 +283,7 @@ export class UserPageComponent implements OnInit {
            
            this.dtTrigger.next("2");
            this. remove_duplicates_devices()
-         
-
+            setInterval(this.do_notifications.bind(this),2000)
 
 
 
@@ -261,7 +293,7 @@ export class UserPageComponent implements OnInit {
           
         });
       
-
+    
 
    }
   else{
@@ -293,6 +325,18 @@ export class UserPageComponent implements OnInit {
       var dname= document.getElementById("devicename");
       if(dname instanceof HTMLParagraphElement)
             dname.textContent=this.device_search["name"]
+      
+      let date=new Date();
+      let date2=String(date.getFullYear())+"-"+String(date.getMonth()+1)+"-"+String(date.getDate())
+       console.log("current found day: ",date2);
+       this.day=date2;
+
+      $("#date").val(this.day)
+    
+
+      this.make_Chart(this.device_searched,this.day);
+      
+
       alert("Device: "+ this.device_search.name +" was found");
     },error=>alert("Couldn't find device"))
   }

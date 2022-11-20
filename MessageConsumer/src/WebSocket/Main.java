@@ -1,5 +1,6 @@
 package WebSocket;
 import java.util.Collections;
+import java.util.Date;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,8 +18,8 @@ public class Main {
 		          .<String, Object>singletonMap("server.port", "8083"));
 		        app.run(args);
 		
-		
-		
+		Date date=new Date();
+		System.out.println("date"+date);
 		// TODO Auto-generated method stub
        
       // mstdb.getDeviceInfo(Long.valueOf(17));

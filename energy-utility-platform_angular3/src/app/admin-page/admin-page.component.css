@@ -120,28 +120,19 @@ z-index:5;
 
 }
 
-body{
-
-    margin:0px 0px 0px 0px;
-    width:100vw;
-}
-
 .main 
 {   
     
-     width: 100vw;
-   
-    background-color:gainsboro;
-
     padding:50px;
 
 }
 .nav_open
 {    
-    width:100vw;
+   
     transform:translateX(175px);
 
-    background-color:gainsboro
+     background-color:gainsboro;
+     width: 50%;
 
 }
 .action_button

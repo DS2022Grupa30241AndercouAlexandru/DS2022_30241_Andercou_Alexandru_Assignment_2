@@ -34,7 +34,7 @@ public class DataProcessor{
     {
          this.device_id=device_id;
          //10*6*
-        delay =30 * 1000;
+        delay =100 * 1000;
         mqSender = new  RabbitMQSender();
 
         task = new LoopTask();
