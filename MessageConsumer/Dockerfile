@@ -5,8 +5,8 @@ COPY ./pom.xml /root/
 WORKDIR /root
 RUN mvn package
 
-RUN java -Djarmode=layertools  -jar  /root/target/ds-2022-2-0.0.1-SNAPSHOT.jar list
-RUN java -Djarmode=layertools -jar /root/target/ds-2022-2-0.0.1-SNAPSHOT.jar extract
+RUN java   -jar  /root/target/ds-2022-2-0.0.1-SNAPSHOT.jar list
+RUN java  -jar /root/target/ds-2022-2-0.0.1-SNAPSHOT.jar extract
 RUN ls -l /root
 
 
