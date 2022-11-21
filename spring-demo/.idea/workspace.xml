@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecded0bb-035d-494e-bf41-1597c4e5eda3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MessageConsumer/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DataProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DataProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/DeviceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/DeviceDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/MeasurementSenderToDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/MeasurementSenderToDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/RabbitMQReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/RabbitMQReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../energy-utility-platform_angular3/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../energy-utility-platform_angular3/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +87,35 @@
       <command value="mvn package" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Ds2022Application">
+  <component name="RunManager" selected="Maven.ds-2022 [package]">
+    <configuration name="ds-2022 [package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="NodeWebKit" factoryName="NW.js" nameIsGenerated="true">
+      <method v="2" />
+    </configuration>
     <configuration name="Ds2022Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ro.tuc.ds2022.Ds2022Application" />
@@ -79,12 +124,19 @@
       </method>
     </configuration>
     <configuration name="Ds2022Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="ds-2022" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="spring-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ro.tuc.ds2022.Ds2022Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Maven.ds-2022 [package]" />
+      <item itemvalue="NW.js.Unnamed" />
+      <item itemvalue="Spring Boot.Ds2022Application" />
+      <item itemvalue="Spring Boot.Ds2022Application (1)" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,7 +154,7 @@
       <workItem from="1668666701739" duration="3314000" />
       <workItem from="1668760755746" duration="1940000" />
       <workItem from="1668774181600" duration="6461000" />
-      <workItem from="1668981600688" duration="1479000" />
+      <workItem from="1668981600688" duration="5449000" />
     </task>
     <servers />
   </component>

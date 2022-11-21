@@ -20,7 +20,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
+        <dependency>postgres
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>

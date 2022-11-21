@@ -5,18 +5,12 @@ COPY ./pom.xml /root/
 WORKDIR /root
 RUN mvn package
 
-RUN java   -jar  /root/target/ds-2022-2-0.0.1-SNAPSHOT.jar list
-RUN java  -jar /root/target/ds-2022-2-0.0.1-SNAPSHOT.jar extract
+RUN java -Djarmode=layertools  -jar  /root/target/MessageConsumer-0.0.1-SNAPSHOT.jar list
+RUN java  -Djarmode=layertools -jar  /root/target/MessageConsumer-0.0.1-SNAPSHOT.jar extract
 RUN ls -l /root
 
 
 FROM openjdk:11.0.6-jre
-ENV TZ=UTC
-ENV DB_PASSWORD=1234
-ENV DB_PORT=5432
-ENV DB_USER=postgres
-ENV DB_DBNAME=energy-db
-ENV DB_IP=localhost
 
 
 COPY --from=builder /root/dependencies/ ./

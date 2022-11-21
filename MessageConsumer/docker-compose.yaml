@@ -1,11 +1,9 @@
 version: '3'
 
 services:
-  demo-be:
+  consumer_rabbit:
     build: .
     image: consumer_client
-    restart: always
-    environment:
     ports:
         - "8083:8083"
    
