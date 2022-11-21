@@ -284,14 +284,14 @@ export class UserPageComponent implements OnInit {
            this.dtTrigger.next("2");
            this. remove_duplicates_devices()
             setInterval(this.do_notifications.bind(this),2000)
+            setInterval( this.reSearch.bind(this),1000)
 
 
-
-
+           })
 
 
           
-        });
+        ;
       
     
 
@@ -318,6 +318,22 @@ export class UserPageComponent implements OnInit {
 
   }
 
+  reSearch()
+ {
+
+  if(this.device_search & this.device_search["id"]) 
+  {
+    
+    this.searchDeviceById(this.device_search["id"]);
+  }
+
+
+ }
+
+
+
+
+
   searchDeviceById(id: number) {
     this.httpc.get(this.url13 + "/" + id).subscribe(response => {
       this.device_search = response;
@@ -326,11 +342,13 @@ export class UserPageComponent implements OnInit {
       if(dname instanceof HTMLParagraphElement)
             dname.textContent=this.device_search["name"]
       
+            if(!this.day)
+            {
       let date=new Date();
       let date2=String(date.getFullYear())+"-"+String(date.getMonth()+1)+"-"+String(date.getDate())
        console.log("current found day: ",date2);
        this.day=date2;
-
+            }
       $("#date").val(this.day)
     
 

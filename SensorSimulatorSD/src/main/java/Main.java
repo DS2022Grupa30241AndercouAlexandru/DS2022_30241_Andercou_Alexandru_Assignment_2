@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        ClassLoader loader = Main.class.getClassLoader();
+        System.out.println(loader.getResource("Main.class"));
 
         FileReader reader=new FileReader("src/main/resources/aplication.propeties");
         Properties p=new Properties();

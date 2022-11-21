@@ -5,25 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecded0bb-035d-494e-bf41-1597c4e5eda3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DataProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DataProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/DeviceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/DeviceDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/MeasurementSenderToDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/MeasurementSenderToDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/RabbitMQReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/RabbitMQReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../energy-utility-platform_angular3/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../energy-utility-platform_angular3/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SensorSimulatorSD/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SensorSimulatorSD/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SensorSimulatorSD/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SensorSimulatorSD/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +138,7 @@
       <workItem from="1668666701739" duration="3314000" />
       <workItem from="1668760755746" duration="1940000" />
       <workItem from="1668774181600" duration="6461000" />
-      <workItem from="1668981600688" duration="5449000" />
+      <workItem from="1668981600688" duration="6262000" />
     </task>
     <servers />
   </component>

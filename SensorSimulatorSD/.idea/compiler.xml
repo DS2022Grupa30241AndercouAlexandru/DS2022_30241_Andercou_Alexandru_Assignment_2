@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SensorSimulatorSD" target="19" />
+      <module name="SensorSimulatorSD" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

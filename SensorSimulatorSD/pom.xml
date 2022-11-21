@@ -4,13 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
+    <groupId>SensorSimulatorSD</groupId>
     <artifactId>SensorSimulatorSD</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <name>SensorSimulatorSD</name>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 <dependencies>
@@ -50,12 +51,7 @@
         <version>1.18.22</version>
         <scope>compile</scope>
     </dependency>
-    <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.18.22</version>
-        <scope>compile</scope>
-    </dependency>
+
 
 
 </dependencies>
@@ -65,9 +61,35 @@
         <resource>
             <directory>src/main/resources</directory>
         </resource>
-        <resource>
-            <directory>src/main/config</directory>
-        </resource>
     </resources>
+    <plugins>
+        <plugin>
+            <!-- Build an executable JAR -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.1.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <classpathPrefix>target/classes/</classpathPrefix>
+                        <mainClass>Main</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.3.0</version>
+            <executions>
+                <execution>
+                    
+                </execution>
+
+
+            </executions>
+        </plugin>
+    </plugins>
 </build>
 </project>
