@@ -10,8 +10,8 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '358e6634-6207-40ca-9a75-83acb5647034'
-  imageRepository: 'alexandrusandudsandercoualexandruassignment'
+  dockerRegistryServiceConnection: 'c87f31f5-ad48-435d-94d4-fc80af046d14'
+  imageRepository: 'nevergiveaf'
   containerRegistry: 'ds2022energyfacilityandercoualexandru.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/spring-demo/Dockerfile'
   tag: '$(Build.BuildId)'
@@ -26,8 +26,15 @@ stages:
   - job: Build
     displayName: Build
     pool:
-       name: local
+      name:local 
     steps:
     - task: Maven@3
+      displayName: Build and push an image to container registry
       inputs:
-          mavenPomFile: 'spring-demo/pom.xml'
+        mavenPomFile: "spring-demo/pom.xml"
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
