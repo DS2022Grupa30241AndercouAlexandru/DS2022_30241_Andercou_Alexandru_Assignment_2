@@ -1,0 +1,33 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '358e6634-6207-40ca-9a75-83acb5647034'
+  imageRepository: 'alexandrusandudsandercoualexandruassignment'
+  containerRegistry: 'ds2022energyfacilityandercoualexandru.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/spring-demo/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: Build and push stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+       name: local
+    steps:
+    - task: Maven@3
+      inputs:
+          mavenPomFile: 'pom.xml'
