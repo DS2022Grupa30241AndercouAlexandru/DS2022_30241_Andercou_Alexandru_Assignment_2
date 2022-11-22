@@ -26,14 +26,8 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+       name: local
     steps:
-    - task: Docker@2
-      displayName: Build and push an image to container registry
+    - task: Maven@3
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+          mavenPomFile: 'spring-demo/pom.xml'
