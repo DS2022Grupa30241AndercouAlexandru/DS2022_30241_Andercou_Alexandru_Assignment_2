@@ -5,8 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecded0bb-035d-494e-bf41-1597c4e5eda3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../SensorSimulatorSD/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../SensorSimulatorSD/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SensorSimulatorSD/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SensorSimulatorSD/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/Services/DoStuff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/Services/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/Services/WebSocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/models/DeviceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/models/MeasurementDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/models/MeasurementDto2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/models/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/models/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MessageConsumer/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MessageConsumer/src/resources/aplication.propeties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/MessageConsumer4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/Services/MeasurementSenderToDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/Services/RabbitMQReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/WebSocket/DataProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/Services/DataProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/WebSocket/DoStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/DoStuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/WebSocket/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/WebSocket/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/WebSockets/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/WebSocket/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/WebSockets/WebSocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/models/DeviceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/models/DeviceDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/models/MeasurementDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/models/MeasurementDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/models/MeasurementDto2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/models/MeasurementDto2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/models/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/models/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/MessageProcessing/models/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/res/MeasurementSenderToDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/Services/MeasurementSenderToDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/src/res/RabbitMQReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MeasurementConsumer/src/main/java/ds2022/measurementconsumer/Services/RabbitMQReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DataProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DataProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/DoStuff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MessageConsumer/target/classes/WebSocket/WebSocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/DeviceDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/MeasurementDto2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/Notification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/models/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/MeasurementSenderToDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MessageConsumer/target/classes/res/RabbitMQReceiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../energy-utility-platform_angular3/src/app/user-page/user-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../energy-utility-platform_angular3/src/app/user-page/user-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,27 +80,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Alexandru Andercou/Desktop/SDassignment2/spring-demo",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "spring.configuration.checksum": "64515ea16072b44698980081ead4e6c1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alexandru Andercou/Desktop/SDassignment2/spring-demo&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;be6b9fbdeec6980f5412d6a5d85b6de8&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alexandru Andercou\Desktop\AssigmnentSD\spring-demo\target\generated-sources" />
@@ -139,6 +179,8 @@
       <workItem from="1668760755746" duration="1940000" />
       <workItem from="1668774181600" duration="6461000" />
       <workItem from="1668981600688" duration="6262000" />
+      <workItem from="1669041430441" duration="775000" />
+      <workItem from="1669057890810" duration="2240000" />
     </task>
     <servers />
   </component>

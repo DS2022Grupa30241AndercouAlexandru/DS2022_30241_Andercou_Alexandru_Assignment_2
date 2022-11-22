@@ -284,7 +284,7 @@ export class UserPageComponent implements OnInit {
            this.dtTrigger.next("2");
            this. remove_duplicates_devices()
             setInterval(this.do_notifications.bind(this),2000)
-            setInterval( this.reSearch.bind(this),1000)
+            setInterval( this.reSearch.bind(this),5000)
 
 
            })
@@ -320,8 +320,9 @@ export class UserPageComponent implements OnInit {
 
   reSearch()
  {
-
-  if(this.device_search & this.device_search["id"]) 
+   console.log("nu e problema aici")
+  if(this.device_search ) 
+    if(this.device_search["id"])
   {
     
     this.searchDeviceById(this.device_search["id"]);
@@ -355,7 +356,7 @@ export class UserPageComponent implements OnInit {
       this.make_Chart(this.device_searched,this.day);
       
 
-      alert("Device: "+ this.device_search.name +" was found");
+     // alert("Device: "+ this.device_search.name +" was found");
     },error=>alert("Couldn't find device"))
   }
 
