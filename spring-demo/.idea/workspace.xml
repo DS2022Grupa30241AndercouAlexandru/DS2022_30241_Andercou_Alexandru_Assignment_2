@@ -7,6 +7,8 @@
     <list default="true" id="ecded0bb-035d-494e-bf41-1597c4e5eda3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ds-2022-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ds-2022-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ds-2022-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/ds-2022-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +142,7 @@
       <workItem from="1668981600688" duration="6262000" />
       <workItem from="1669041430441" duration="775000" />
       <workItem from="1669057890810" duration="2240000" />
-      <workItem from="1669150573256" duration="315000" />
+      <workItem from="1669150573256" duration="2212000" />
     </task>
     <servers />
   </component>

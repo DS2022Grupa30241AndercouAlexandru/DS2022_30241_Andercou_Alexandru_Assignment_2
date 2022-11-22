@@ -8,10 +8,10 @@ services:
     environment:
       - TZ=UTC
       - DB_PASSWORD=1234
-      - DB_PORT=5432
+      - DB_PORT=5431
       - DB_USER=postgres
       - DB_DBNAME=energy-db
-      - DB_IP=spring-demo-demo-db-1
+      - DB_IP=host.docker.internal
     ports:
         - "8080:8080"
    
