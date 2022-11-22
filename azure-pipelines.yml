@@ -30,4 +30,4 @@ stages:
     steps:
     - task: Maven@3
       inputs:
-          mavenPomFile: 'pom.xml'
+          mavenPomFile: 'spring-demo/pom.xml'
