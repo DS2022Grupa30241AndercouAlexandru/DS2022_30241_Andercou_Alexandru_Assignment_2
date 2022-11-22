@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '358e6634-6207-40ca-9a75-83acb5647034'
   imageRepository: 'alexandrusandudsandercoualexandruassignment'
   containerRegistry: 'ds2022energyfacilityandercoualexandru.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/MeasurementConsumer/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/spring-demo/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
@@ -30,4 +30,4 @@ stages:
     steps:
     - task: Maven@3
       inputs:
-          mavenPomFile: 'spring-demo/pom.xml'
+          mavenPomFile: 'pom.xml'
