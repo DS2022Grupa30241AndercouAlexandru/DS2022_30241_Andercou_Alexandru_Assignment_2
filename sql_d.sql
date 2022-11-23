@@ -1,0 +1,490 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.0 (Debian 15.0-1.pgdg110+1)
+-- Dumped by pg_dump version 15.0 (Debian 15.0-1.pgdg110+1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: device; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.device (
+    id bigint NOT NULL,
+    address character varying(255),
+    description character varying(255),
+    maximum_hourly_energy_consumption real,
+    name character varying(255),
+    owner bigint
+);
+
+
+ALTER TABLE public.device OWNER TO postgres;
+
+--
+-- Name: hibernate_sequence; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.hibernate_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.hibernate_sequence OWNER TO postgres;
+
+--
+-- Name: measurement; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.measurement (
+    id bigint NOT NULL,
+    energy_consumption real,
+    unity_of_measurement character varying(255),
+    date date,
+    "time" time without time zone,
+    owner bigint
+);
+
+
+ALTER TABLE public.measurement OWNER TO postgres;
+
+--
+-- Name: role; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.role (
+    id bigint NOT NULL,
+    password character varying(255),
+    type character varying(255),
+    username character varying(255)
+);
+
+
+ALTER TABLE public.role OWNER TO postgres;
+
+--
+-- Name: user_account; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_account (
+    id bigint NOT NULL,
+    name character varying(255),
+    role_id bigint
+);
+
+
+ALTER TABLE public.user_account OWNER TO postgres;
+
+--
+-- Data for Name: device; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.device (id, address, description, maximum_hourly_energy_consumption, name, owner) FROM stdin;
+15	strada Govora 18	an electronic multimeter	120	multimeter50x3	4
+18	Strada Richerdson nr 33	black smart and big	60	Samsung A13	33
+16	Strada Careiuluio 32	masina de spalat inteligenta	300	Philips	7
+14	Strada Richerdson nr 33	Samsung Smart Phone	100	Iphone 13	53
+66	Observatorului 50	laptop	200	lenovo	75
+17	Strada Observatorului nr 54	Samsung smart phone	100	Galaxy A03	4
+\.
+
+
+--
+-- Data for Name: measurement; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.measurement (id, energy_consumption, unity_of_measurement, date, "time", owner) FROM stdin;
+509	0	kW/h	2022-11-20	23:04:38	17
+510	3.6417077	kW/h	2022-11-21	15:14:39	17
+511	3.6417077	kW/h	2022-11-21	15:14:42	17
+512	3.6417077	kW/h	2022-11-21	15:14:45	17
+513	7.5521626	kW/h	2022-11-21	15:16:19	17
+514	7.5521626	kW/h	2022-11-21	15:16:22	17
+515	7.5521626	kW/h	2022-11-21	15:16:25	17
+516	10.2355385	kW/h	2022-11-21	15:17:59	17
+19	25	KW/h	2022-10-03	14:00:00	17
+20	30	KW/h	2022-09-30	03:00:00	17
+21	55	KW/h	2022-10-02	15:00:00	17
+22	55	KW/h	2022-09-30	20:00:00	17
+23	23	KW/h	2022-09-30	22:00:00	17
+24	27	KW/h	2022-09-30	23:00:00	15
+26	24	KW/h	2022-09-30	10:00:00	17
+27	45	KW/h	2022-09-30	11:00:00	17
+28	45	KW/h	2022-10-02	11:00:00	15
+29	0	KW/h	2022-09-30	04:00:00	17
+30	0	KW/h	2022-10-02	16:52:00	17
+31	27	KW/h	2022-10-04	16:52:00	17
+517	10.2355385	kW/h	2022-11-21	15:18:02	17
+63	55	kW/h	2022-11-09	02:11:00	15
+76	55	kW/h	2022-09-30	01:45:00	17
+81	20	kW/h	2022-11-18	22:18:00	15
+82	0	kW/h	2022-11-18	17:19:31	17
+83	0	kW/h	2022-11-18	17:20:01	17
+84	0	kW/h	2022-11-18	23:24:32	17
+85	0	kW/h	2022-11-18	23:24:39	17
+86	0.5	kW/h	2022-11-18	23:25:02	17
+87	0.5	kW/h	2022-11-18	23:25:09	17
+88	1	kW/h	2022-11-18	23:25:32	17
+89	1	kW/h	2022-11-18	23:25:39	17
+90	3.6417077	kW/h	2022-11-18	23:26:02	17
+91	3.6417077	kW/h	2022-11-18	23:26:09	17
+92	10.2355385	kW/h	2022-11-18	23:27:09	17
+93	10.2355385	kW/h	2022-11-18	23:27:09	17
+94	0	kW/h	2022-11-18	23:33:25	17
+95	0	kW/h	2022-11-18	23:33:28	17
+96	0	kW/h	2022-11-18	23:33:33	17
+97	0.5	kW/h	2022-11-18	23:33:55	17
+98	0.5	kW/h	2022-11-18	23:33:58	17
+99	0.5	kW/h	2022-11-18	23:34:03	17
+100	1	kW/h	2022-11-18	23:34:25	17
+518	10.2355385	kW/h	2022-11-21	15:18:05	17
+519	0	kW/h	2022-11-21	15:27:57	17
+520	0.5	kW/h	2022-11-21	15:29:37	17
+521	1	kW/h	2022-11-21	15:31:17	17
+522	3.6417077	kW/h	2022-11-21	15:32:57	17
+523	7.5521626	kW/h	2022-11-21	15:34:37	17
+524	10.2355385	kW/h	2022-11-21	15:36:17	17
+525	15.302095	kW/h	2022-11-21	15:37:57	17
+526	21.075783	kW/h	2022-11-21	15:39:37	17
+527	26.287174	kW/h	2022-11-21	15:41:17	17
+528	32.800285	kW/h	2022-11-21	15:42:57	17
+529	39.54328	kW/h	2022-11-21	15:44:37	17
+530	46.65131	kW/h	2022-11-21	15:46:17	17
+531	55.040474	kW/h	2022-11-21	15:47:57	17
+532	0.5	kW/h	2022-11-21	15:52:49	17
+533	0.5	kW/h	2022-11-21	15:52:49	17
+534	0	kW/h	2022-11-21	20:21:02	17
+535	0	kW/h	2022-11-21	20:21:02	17
+536	0.5	kW/h	2022-11-21	20:22:42	17
+537	7.5521626	kW/h	2022-11-21	20:27:42	17
+538	7.5521626	kW/h	2022-11-21	20:27:42	17
+539	0	kW/h	2022-11-22	16:44:44	17
+540	0.5	kW/h	2022-11-22	16:46:24	17
+541	1	kW/h	2022-11-22	16:48:04	17
+542	173.53586	kW/h	2022-11-22	17:24:44	17
+543	173.53586	kW/h	2022-11-22	17:24:44	17
+544	0	kW/h	2022-11-22	17:39:50	17
+545	3.6417077	kW/h	2022-11-22	17:44:50	17
+546	3.6417077	kW/h	2022-11-22	17:44:50	17
+547	7.5521626	kW/h	2022-11-22	17:46:30	17
+548	10.2355385	kW/h	2022-11-22	17:48:10	17
+549	15.302095	kW/h	2022-11-22	17:49:50	17
+550	21.075783	kW/h	2022-11-22	17:51:30	17
+551	26.287174	kW/h	2022-11-22	17:53:10	17
+552	32.800285	kW/h	2022-11-22	17:54:50	17
+553	39.54328	kW/h	2022-11-22	17:56:30	17
+554	46.65131	kW/h	2022-11-22	17:58:10	17
+555	55.040474	kW/h	2022-11-22	17:59:50	17
+556	62.612762	kW/h	2022-11-22	18:01:30	17
+557	72.88878	kW/h	2022-11-22	18:03:10	17
+558	80.777435	kW/h	2022-11-22	18:04:50	17
+559	89.03512	kW/h	2022-11-22	18:06:30	17
+560	0	kW/h	2022-11-22	18:38:46	17
+561	0	kW/h	2022-11-22	18:49:13	17
+562	0.5	kW/h	2022-11-22	18:50:53	17
+563	1	kW/h	2022-11-22	18:52:33	17
+564	3.6417077	kW/h	2022-11-22	18:54:13	17
+565	7.5521626	kW/h	2022-11-22	18:55:53	17
+566	10.2355385	kW/h	2022-11-22	18:57:33	17
+567	15.302095	kW/h	2022-11-22	18:59:13	17
+568	21.075783	kW/h	2022-11-22	19:00:53	17
+569	26.287174	kW/h	2022-11-22	19:02:33	17
+570	32.800285	kW/h	2022-11-22	19:04:13	17
+571	39.54328	kW/h	2022-11-22	19:05:53	17
+572	46.65131	kW/h	2022-11-22	19:07:33	17
+573	55.040474	kW/h	2022-11-22	19:09:13	17
+574	62.612762	kW/h	2022-11-22	19:10:53	17
+575	72.88878	kW/h	2022-11-22	19:12:33	17
+576	80.777435	kW/h	2022-11-22	19:14:13	17
+577	89.03512	kW/h	2022-11-22	19:15:53	17
+578	97.87931	kW/h	2022-11-22	19:17:33	17
+579	105.87909	kW/h	2022-11-22	19:19:13	17
+580	114.827614	kW/h	2022-11-22	19:20:53	17
+581	124.21248	kW/h	2022-11-22	19:22:33	17
+582	135.63899	kW/h	2022-11-22	19:24:13	17
+583	146.11133	kW/h	2022-11-22	19:25:53	17
+584	159.18199	kW/h	2022-11-22	19:27:33	17
+585	173.53586	kW/h	2022-11-22	19:29:13	17
+586	185.94833	kW/h	2022-11-22	19:30:53	17
+587	200.25938	kW/h	2022-11-22	19:32:33	17
+588	214.84244	kW/h	2022-11-22	19:34:13	17
+589	225.96875	kW/h	2022-11-22	19:35:53	17
+590	236.31264	kW/h	2022-11-22	19:37:33	17
+591	247.80737	kW/h	2022-11-22	19:39:13	17
+592	257.2963	kW/h	2022-11-22	19:40:53	17
+593	267.5105	kW/h	2022-11-22	19:42:33	17
+594	277.36844	kW/h	2022-11-22	19:44:13	17
+595	286.81467	kW/h	2022-11-22	19:45:53	17
+596	296.5312	kW/h	2022-11-22	19:47:33	17
+597	306.15164	kW/h	2022-11-22	19:49:13	17
+598	317.9515	kW/h	2022-11-22	19:50:53	17
+599	328.84143	kW/h	2022-11-22	19:52:33	17
+600	341.17435	kW/h	2022-11-22	19:54:13	17
+601	353.5567	kW/h	2022-11-22	19:55:53	17
+602	365.52075	kW/h	2022-11-22	19:57:33	17
+603	380.79556	kW/h	2022-11-22	19:59:13	17
+604	396.32318	kW/h	2022-11-22	20:00:53	17
+605	415.889	kW/h	2022-11-22	20:02:33	17
+606	435.58365	kW/h	2022-11-22	20:04:13	17
+607	458.12753	kW/h	2022-11-22	20:05:53	17
+608	481.34384	kW/h	2022-11-22	20:07:33	17
+609	503.83487	kW/h	2022-11-22	20:09:13	17
+610	526.0231	kW/h	2022-11-22	20:10:53	17
+611	551.2686	kW/h	2022-11-22	20:12:33	17
+612	576.1844	kW/h	2022-11-22	20:14:13	17
+613	601.6405	kW/h	2022-11-22	20:15:53	17
+614	625.6976	kW/h	2022-11-22	20:17:33	17
+615	649.64685	kW/h	2022-11-22	20:19:13	17
+616	670.42017	kW/h	2022-11-22	20:20:53	17
+617	686.75806	kW/h	2022-11-22	20:22:33	17
+618	701.2792	kW/h	2022-11-22	20:24:13	17
+619	713.9806	kW/h	2022-11-22	20:25:53	17
+620	727.2413	kW/h	2022-11-22	20:27:33	17
+621	739.0616	kW/h	2022-11-22	20:29:13	17
+622	749.0419	kW/h	2022-11-22	20:30:53	17
+623	758.02795	kW/h	2022-11-22	20:32:33	17
+624	768.0976	kW/h	2022-11-22	20:34:13	17
+625	775.6336	kW/h	2022-11-22	20:35:53	17
+626	785.9072	kW/h	2022-11-22	20:37:33	17
+627	799.1028	kW/h	2022-11-22	20:39:13	17
+628	814.5882	kW/h	2022-11-22	20:40:53	17
+629	830.7043	kW/h	2022-11-22	20:42:33	17
+630	846.1387	kW/h	2022-11-22	20:44:13	17
+631	862.74066	kW/h	2022-11-22	20:45:53	17
+632	879.79755	kW/h	2022-11-22	20:47:33	17
+633	897.15875	kW/h	2022-11-22	20:49:13	17
+634	915.41943	kW/h	2022-11-22	20:50:53	17
+635	934.1473	kW/h	2022-11-22	20:52:33	17
+636	952.0815	kW/h	2022-11-22	20:54:13	17
+637	970.882	kW/h	2022-11-22	20:55:53	17
+638	989.66016	kW/h	2022-11-22	20:57:33	17
+639	1007.8745	kW/h	2022-11-22	20:59:13	17
+640	1027.1506	kW/h	2022-11-22	21:00:53	17
+641	1044.8717	kW/h	2022-11-22	21:02:33	17
+642	1064.0294	kW/h	2022-11-22	21:04:13	17
+643	1083.3932	kW/h	2022-11-22	21:05:53	17
+644	1102.7638	kW/h	2022-11-22	21:07:33	17
+645	1119.3425	kW/h	2022-11-22	21:09:13	17
+646	1136.2665	kW/h	2022-11-22	21:10:53	17
+647	1152.2242	kW/h	2022-11-22	21:12:33	17
+648	1166.0991	kW/h	2022-11-22	21:14:13	17
+649	1179.7877	kW/h	2022-11-22	21:15:53	17
+650	1195.0835	kW/h	2022-11-22	21:17:33	17
+651	1209.472	kW/h	2022-11-22	21:19:13	17
+652	1225.437	kW/h	2022-11-22	21:20:53	17
+653	1242.0219	kW/h	2022-11-22	21:22:33	17
+654	1258.5804	kW/h	2022-11-22	21:24:13	17
+655	1276.2723	kW/h	2022-11-22	21:25:53	17
+656	1295.3333	kW/h	2022-11-22	21:27:33	17
+657	1312.578	kW/h	2022-11-22	21:29:13	17
+658	1331.765	kW/h	2022-11-22	21:30:53	17
+659	1351.2339	kW/h	2022-11-22	21:32:33	17
+660	1369.806	kW/h	2022-11-22	21:34:13	17
+661	1388.481	kW/h	2022-11-22	21:35:53	17
+662	1404.8088	kW/h	2022-11-22	21:37:33	17
+663	1418.4934	kW/h	2022-11-22	21:39:13	17
+664	1433.8948	kW/h	2022-11-22	21:40:53	17
+665	1446.554	kW/h	2022-11-22	21:42:33	17
+666	1459.5308	kW/h	2022-11-22	21:44:13	17
+667	1472.6743	kW/h	2022-11-22	21:45:53	17
+668	1484.8291	kW/h	2022-11-22	21:47:33	17
+669	1494.8994	kW/h	2022-11-22	21:49:13	17
+670	1504.2085	kW/h	2022-11-22	21:50:53	17
+671	1513.8037	kW/h	2022-11-22	21:52:33	17
+672	1522.6321	kW/h	2022-11-22	21:54:13	17
+673	1531.5074	kW/h	2022-11-22	21:55:53	17
+674	1542.9857	kW/h	2022-11-22	21:57:33	17
+675	1553.1217	kW/h	2022-11-22	21:59:13	17
+676	1562.0529	kW/h	2022-11-22	22:00:53	17
+677	1572.3783	kW/h	2022-11-22	22:02:33	17
+678	1582.1829	kW/h	2022-11-22	22:04:13	17
+679	1592.3325	kW/h	2022-11-22	22:05:53	17
+680	1603.9945	kW/h	2022-11-22	22:07:33	17
+681	1617.1014	kW/h	2022-11-22	22:09:13	17
+682	1629.2831	kW/h	2022-11-22	22:10:53	17
+683	1641.1119	kW/h	2022-11-22	22:12:33	17
+684	1650.1384	kW/h	2022-11-22	22:14:13	17
+685	1659.0353	kW/h	2022-11-22	22:15:53	17
+686	1667.8221	kW/h	2022-11-22	22:17:33	17
+687	1675.1997	kW/h	2022-11-22	22:19:13	17
+688	1681.5859	kW/h	2022-11-22	22:20:53	17
+689	1689.3378	kW/h	2022-11-22	22:22:33	17
+690	1695.306	kW/h	2022-11-22	22:24:13	17
+691	1699.8402	kW/h	2022-11-22	22:25:53	17
+692	1704.494	kW/h	2022-11-22	22:27:33	17
+693	1708.3539	kW/h	2022-11-22	22:29:13	17
+694	1711.8973	kW/h	2022-11-22	22:30:53	17
+695	1718.534	kW/h	2022-11-22	22:32:33	17
+696	1723.8014	kW/h	2022-11-22	22:34:13	17
+697	1728.8103	kW/h	2022-11-22	22:35:53	17
+698	1733.4855	kW/h	2022-11-22	22:37:33	17
+699	1737.0411	kW/h	2022-11-22	22:39:13	17
+700	1740.5714	kW/h	2022-11-22	22:40:53	17
+701	1745.3282	kW/h	2022-11-22	22:42:33	17
+702	1749.2422	kW/h	2022-11-22	22:44:13	17
+703	1752.446	kW/h	2022-11-22	22:45:53	17
+704	1755.8107	kW/h	2022-11-22	22:47:33	17
+705	1759.5176	kW/h	2022-11-22	22:49:13	17
+706	1761.0852	kW/h	2022-11-22	22:50:53	17
+707	1762.9775	kW/h	2022-11-22	22:52:33	17
+708	1764.9667	kW/h	2022-11-22	22:54:13	17
+709	1766.8148	kW/h	2022-11-22	22:55:53	17
+710	1767.3148	kW/h	2022-11-22	22:57:34	17
+711	1767.8148	kW/h	2022-11-22	22:59:13	17
+712	1770.6027	kW/h	2022-11-22	23:00:53	17
+713	1775.1003	kW/h	2022-11-22	23:02:33	17
+714	1781.8041	kW/h	2022-11-22	23:04:13	17
+715	1786.9885	kW/h	2022-11-22	23:05:53	17
+716	1792.1553	kW/h	2022-11-22	23:07:33	17
+717	1796.9724	kW/h	2022-11-22	23:09:13	17
+718	1802.0804	kW/h	2022-11-22	23:10:53	17
+719	1809.8419	kW/h	2022-11-22	23:12:33	17
+720	1815.4031	kW/h	2022-11-22	23:14:13	17
+721	1820.8798	kW/h	2022-11-22	23:15:53	17
+722	1827.8408	kW/h	2022-11-22	23:17:33	17
+723	1834.2317	kW/h	2022-11-22	23:19:13	17
+724	1841.8298	kW/h	2022-11-22	23:20:53	17
+725	1850.5938	kW/h	2022-11-22	23:22:33	17
+726	1862.1947	kW/h	2022-11-22	23:24:13	17
+727	1875.0134	kW/h	2022-11-22	23:25:53	17
+728	1887.6783	kW/h	2022-11-22	23:27:33	17
+729	1897.8429	kW/h	2022-11-22	23:29:13	17
+730	1909.5447	kW/h	2022-11-22	23:30:53	17
+731	1921.9575	kW/h	2022-11-22	23:32:33	17
+732	1933.9113	kW/h	2022-11-22	23:34:13	17
+733	1941.8942	kW/h	2022-11-22	23:35:53	17
+734	1950.8971	kW/h	2022-11-22	23:37:33	17
+735	1959.1572	kW/h	2022-11-22	23:39:13	17
+736	1967.115	kW/h	2022-11-22	23:40:53	17
+737	1975.0155	kW/h	2022-11-22	23:42:33	17
+738	1984.6702	kW/h	2022-11-22	23:44:13	17
+\.
+
+
+--
+-- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.role (id, password, type, username) FROM stdin;
+1	12345	ADMIN	alex_admin
+3	1234	USER	alexandru
+6	12347	ADMIN	Maria_admin
+32	545678	USER	matei_turcu
+72	12345	USER	filip_tudor22
+52	123	USER	chis_dan2
+74	1234	USER	pop_mihai
+77	1234	USER	lesu_22
+79	trgttry	USER	2223rt
+\.
+
+
+--
+-- Data for Name: user_account; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_account (id, name, role_id) FROM stdin;
+2	Andercou Alexandru-Stefan	1
+4	Andercou Alexandru	3
+7	Maria Pop	6
+33	Matei Turcu	32
+53	Dan Chis	52
+73	Tudor Filip	72
+75	Mihai Pop	74
+78	Lesu Bogdan	77
+80	Maria2 Pop	79
+\.
+
+
+--
+-- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.hibernate_sequence', 738, true);
+
+
+--
+-- Name: device device_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.device
+    ADD CONSTRAINT device_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: measurement measurement_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.measurement
+    ADD CONSTRAINT measurement_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: role role_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.role
+    ADD CONSTRAINT role_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: role uk_6gednlheyg5nkdgs0evxjwavt; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.role
+    ADD CONSTRAINT uk_6gednlheyg5nkdgs0evxjwavt UNIQUE (username);
+
+
+--
+-- Name: user_account user_account_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_account
+    ADD CONSTRAINT user_account_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_account fk4j8uoaeve853dcbl0tjd0yoq0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_account
+    ADD CONSTRAINT fk4j8uoaeve853dcbl0tjd0yoq0 FOREIGN KEY (role_id) REFERENCES public.role(id);
+
+
+--
+-- Name: measurement fk9ki27vumfgue2ghu5h241v2mb; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.measurement
+    ADD CONSTRAINT fk9ki27vumfgue2ghu5h241v2mb FOREIGN KEY (owner) REFERENCES public.device(id);
+
+
+--
+-- Name: device fkl7p2lrwkeybwxv6lr3wuni3ed; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.device
+    ADD CONSTRAINT fkl7p2lrwkeybwxv6lr3wuni3ed FOREIGN KEY (owner) REFERENCES public.user_account(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
