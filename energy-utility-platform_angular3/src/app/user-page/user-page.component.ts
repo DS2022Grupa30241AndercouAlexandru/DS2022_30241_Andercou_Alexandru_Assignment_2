@@ -54,7 +54,7 @@ export class UserPageComponent implements OnInit {
             
 
            
-            if(this.devices.length>1){
+            if(this.devices.length>=1){
 
              copy_dev.push(this.devices[0])
                 
@@ -280,7 +280,7 @@ export class UserPageComponent implements OnInit {
           console.log("USER:",this.user);
           this.change_title();
            this.devices=this.user.devices;
-           
+           console.log("devices before replace",this.devices)
            this.dtTrigger.next("2");
            this. remove_duplicates_devices()
             setInterval(this.do_notifications.bind(this),2000)
