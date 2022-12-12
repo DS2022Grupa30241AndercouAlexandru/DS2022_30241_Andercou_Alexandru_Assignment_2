@@ -57,13 +57,14 @@ public class RabbitMQReceiver {
 
 		   queue=p.getProperty("RQ_QUEUE");
 		    host=p.getProperty("RQ_HOST");
-			System.out.println("Queue:"+queue +" host:"+host);
+
 	   } catch (IOException e) {
 		    System.out.println("aici e problema");
 	   }
 	   System.out.println("cum merge?");
 	   factory.setHost(host);
 	   factory.setPort(5672);
+	   System.out.println("Queue:"+queue +" host:"+host +"port:"+5672);
 	   try {
 	    connected=true;
 	    Connection connection = factory.newConnection();

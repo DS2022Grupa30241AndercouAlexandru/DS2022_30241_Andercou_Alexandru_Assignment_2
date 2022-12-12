@@ -12,6 +12,12 @@ folderul MeasurementConsumer contine un docerfile si un dockercompose deoarece a
 SensorSimulator se ruleaza din intelij ,deviceu-iul este configurat din fisierul application propeties.
 
 imaginile de rabbitmq si postgres sunt si ele deployed pe docker.
+pentru crea un container pe docker pentru rabbitmq use:
+docker run  -p 5672:5672 rabbitmq
+pentru postgres:
+docker run  -p 5432:5432 postgres
+
+
 Pentru docker este nevoie de 2 comenzi pentru fiecare componenta.
 
 In repo: DS2022_Andercou_Alexandru_Assignment2_Backend
