@@ -42,59 +42,61 @@ public class DataProcessor {
 
 	public void process(MeasurementDto measurement) {
 		System.out.println("process");
-		if (measurement.getDevice_id() == device_id && device != null) {
-
-
-			devicesStates.get(device_id).setNumberMeasurements(devicesStates.get(device_id).getNumberMeasurements() + 1);
-			if (devicesStates.get(device_id).getNumberMeasurements() > NUMBER_READINGS) {
-				devicesStates.get(device_id).setNumberMeasurements(0);
-				devicesStates.get(device_id).setTotalConsumption(0.0f);
-
-			}
-
-			devicesStates.get(device_id)
-					.setTotalConsumption(devicesStates.get(device_id).getTotalConsumption()
-							+ measurement.getEnergyCon());
-
-			System.out.println("totalConssumption:" + devicesStates.get(device_id).getTotalConsumption());
-
-			//device.getMaximumHourlyEnergyConsumption())
-			if (devicesStates.get(device_id).getTotalConsumption() >
-					devicesStates.get(device_id).getMaxConsumption()) {
-				String message = new String("Device with id: " + device_id + " and name:"
-						+ device.getName() + " consumption per hour is:"
-						+ devicesStates.get(device_id).getTotalConsumption());
-
-				Notification notif = new Notification();
-				notif.setMessage(message);
-				notif.setDevice_id(device.getId());
-				notif.setUser_id(device.getOwner());
-
-				try {
-					ws.sendNotification(notif);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				//Notify client using WebSocket
-
-			}
-
-
-		} else {
-			numberOfMeasurement = 1;
+		if (measurement.getDevice_id() != device_id || device == null) {
 
 			device_id = measurement.getDevice_id();
 			MeasurementSenderToDatabase mstdb = new MeasurementSenderToDatabase();
 			device = mstdb.getDeviceInfo(device_id);
 
-			if (!devicesStates.containsKey(device_id)) {
+			if (!devicesStates.containsKey(device_id))
+			{
 				State s = new State();
 				s.setMaxConsumption(device.getMaximumHourlyEnergyConsumption());
 				devicesStates.put(device_id, s);
+
 			}
+
+			}
+
+		System.out.println("Device Id:" + device_id);
+
+		devicesStates.get(device_id).setNumberMeasurements(devicesStates.get(device_id).getNumberMeasurements() + 1);
+		if (devicesStates.get(device_id).getNumberMeasurements() > NUMBER_READINGS) {
+			devicesStates.get(device_id).setNumberMeasurements(0);
+			devicesStates.get(device_id).setTotalConsumption(0.0f);
+
+		}
+
+		devicesStates.get(device_id)
+				.setTotalConsumption(devicesStates.get(device_id).getTotalConsumption()
+						+ measurement.getEnergyCon());
+
+		System.out.println("totalConssumption:" + devicesStates.get(device_id).getTotalConsumption());
+
+		//device.getMaximumHourlyEnergyConsumption())
+		if (devicesStates.get(device_id).getTotalConsumption() >
+				devicesStates.get(device_id).getMaxConsumption()) {
+			String message = new String("Device with id: " + device_id + " and name:"
+					+ device.getName() + " consumption per hour is:"
+					+ devicesStates.get(device_id).getTotalConsumption());
+
+			Notification notif = new Notification();
+			notif.setMessage(message);
+			notif.setDevice_id(device.getId());
+			notif.setUser_id(device.getOwner());
+
+			try {
+				ws.sendNotification(notif, device.getOwner());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Notify client using WebSocket
+
 		}
 
 
 	}
 }
+
+

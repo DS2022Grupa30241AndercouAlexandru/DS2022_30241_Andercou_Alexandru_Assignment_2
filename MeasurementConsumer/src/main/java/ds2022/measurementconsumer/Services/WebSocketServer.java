@@ -19,9 +19,9 @@ public class WebSocketServer {
 	    
 	    }
 		  
-	    public void sendNotification( Notification notification) {
+	    public void sendNotification( Notification notification,Long id_user) {
 	    	System.out.println("try to send notification to who listends");
-	        this.template.convertAndSend("/topic/note", notification);
+	        this.template.convertAndSend("/topic/note/"+id_user.toString(), notification);
 	    }
 	    
 	    
