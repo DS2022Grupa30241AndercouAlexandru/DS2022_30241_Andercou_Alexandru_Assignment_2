@@ -3,7 +3,7 @@ version: '3'
 services:
   consumer_rabbit:
     build: .
-    image: consumer_client
+    image: ds2022energyfacilityandercoualexandru.azurecr.io/consumer_client
     ports:
         - "8083:8083"
    
