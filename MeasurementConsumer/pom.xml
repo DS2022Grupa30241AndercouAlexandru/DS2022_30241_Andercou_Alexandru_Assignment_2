@@ -305,13 +305,33 @@
 
 </plugin>
 
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<configuration><encoding>UTF-8</encoding>
+				<!-- Filter certificate files with the suffix of pem and pfx -->
+				<nonFilteredFileExtensions>
+					<nonFilteredFileExtension>cer</nonFilteredFileExtension>
+					<nonFilteredFileExtension>pem</nonFilteredFileExtension>
+					<nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+					<nonFilteredFileExtension>p12</nonFilteredFileExtension>
+					<nonFilteredFileExtension>properties</nonFilteredFileExtension>
 
+				</nonFilteredFileExtensions>
+			</configuration>
+		</plugin>
 
 </plugins>
 <resources>
 	<resource>
-	<directory>src/main/resources</directory>
-		<filtering>true</filtering>
+		<directory>src/main/resources</directory>
+		<includes>
+			<include>*.properties</include>
+			<include>**/*.p12</include>
+			<include>**/*.pem</include>
+			<include>**/*.jks</include>
+		</includes>
+		<filtering>false</filtering>
 	</resource>
 </resources>
 </build>

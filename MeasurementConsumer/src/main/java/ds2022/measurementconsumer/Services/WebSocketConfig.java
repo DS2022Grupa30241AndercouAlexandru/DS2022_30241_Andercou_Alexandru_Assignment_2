@@ -13,7 +13,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 
   public void configureMessageBroker(MessageBrokerRegistry config) {
-	  
+
+
     config.enableSimpleBroker("/topic/note");
     config.setApplicationDestinationPrefixes("/gkz");
   }
@@ -21,7 +22,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
   public void registerStompEndpoints(StompEndpointRegistry registry) {
     registry.addEndpoint("/gkz-stomp-endpoint").
-    setAllowedOrigins("http://localhost:4200").withSockJS();
+    setAllowedOrigins("http://localhost:4200","https://localhost:4200").withSockJS();
   }
 
 }
